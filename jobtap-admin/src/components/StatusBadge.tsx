@@ -21,7 +21,7 @@ const statusColors: Record<string, string> = {
 
 const defaultColor = "bg-gray-100 text-gray-800";
 
-export default function StatusBadge({ status }: { status: string; type?: string }) {
+export default function StatusBadge({ status }: { status: string }) {
   const colorClasses = statusColors[status.toLowerCase()] ?? defaultColor;
   const label = status.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 

@@ -1,13 +1,10 @@
-import { getDashboardStats, getJobs, getLeads, getContractors } from "@/lib/mock-data";
+import { getDashboardStats, getJobs, getLeads } from "@/lib/mock-data";
 import StatusBadge from "@/components/StatusBadge";
 
 export default async function DashboardPage() {
   const stats = getDashboardStats();
   const jobs = getJobs().slice(-5).reverse();
   const leads = getLeads().slice(-5).reverse();
-  const contractors = getContractors();
-
-  const contractorMap = new Map(contractors.map((c) => [c.id, c.name]));
 
   const statCards = [
     { label: "Total Contractors", value: stats.totalContractors, icon: "👷", color: "bg-blue-500", trend: "+12%" },
